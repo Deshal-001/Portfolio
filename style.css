@@ -1,0 +1,536 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to bottom, #080808, #050A30,#130D23,#080808); /* Dark gradient resembling outer space */
+    color: white;
+}
+
+#header {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 50px;
+    height: 100vh;
+}
+
+
+
+
+/* Adjust the position of header-text and header-image */
+.header-content {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column; /* Display content vertically */
+    justify-content: space-between; /* Center-align content */
+    text-align: center; /* Center-align content */
+}
+
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    padding: auto;
+    transition: transform 0.8s ease; /* Add transition property for smooth animation */
+}
+
+/* Define animation on hover */
+.header-image:hover {
+    transform: scale(1.1); /* Scale the image on hover */
+}
+
+/* Media query for smaller screens */
+@media (min-width: 1025px) {
+    .header-content {
+        flex-direction: row; /* Display content horizontally on larger screens */
+        justify-content: space-between; /* Space items evenly on larger screens */
+        align-items: center;
+        text-align: left; /* Align text to the left on larger screens */
+    }
+
+    .header-text {
+        max-width: 60%; /* Limit maximum width of text on larger screens */
+    }
+
+    .header-image {
+        max-width: 50%; /* Limit image width to 50% of the container on larger screens */
+        height: auto; /* Reset margin on larger screens */
+    }
+}
+
+
+.container{
+    padding: 10px 10%;
+}
+
+
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 140px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+
+
+}
+
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1{
+    margin-top: 20px;
+    font-size: 80px;
+}
+
+.header-text h1 span{
+    color: #ff004f;
+}
+
+#about{
+    padding: 80px 0;
+    color: #ababaa;
+
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 35%;
+}
+
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.about-col-2{
+    flex-basis: 60%;
+
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 15px 0;
+
+}
+
+.tab-contents ul li  span {
+    color: #b54769;
+    font-size: 14px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+
+/*---------- services section ------------*/
+
+#services {
+    padding: 80px 150px; /* Adjusted padding for top/bottom and left/right */
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div {
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 200;
+    border-right: 10px solid transparent; /* Added transparent border */
+    height: 100%; /* Set a fixed height to ensure alignment */
+    display: flex; /* Added display flex */
+    flex-direction: column; /* Align items in a column */
+    justify-content: space-between; /* Align items with space between */
+    transform: 0.5s;
+    border-radius: 10px;
+}
+
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: auto; /* This will vertically center the icon */
+    font-weight: 700;
+}
+
+.services-list div h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.services-list div p {
+    margin: 0; /* Remove default margin */
+}
+
+.services-list div a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+    font-size: 12px;
+    margin-top: auto; /* Align the anchor to the bottom */
+    display: inline-block;
+}
+
+.services-list div:hover {
+    background: #ff004f;
+    transform: translateY(-10px);
+transition: 0.5s;
+}
+
+/*---------- portfolio ------------*/
+
+#portfolio {
+    padding: 50px 0;
+}
+
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+
+}
+
+.layer {
+    height: 0%;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f); /* Corrected rgba color value */
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0,40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.layer h3{
+font-weight: 500; 
+margin-bottom: 20px;}
+
+.layer a{
+   margin-top: 20px;
+   color: #ff004f;
+   text-decoration: none;
+   font-size: 18px;
+   line-height: 60px;
+   background: #fff;
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+}
+
+.work:hover img{
+    transform: scale(1.1) ;
+}
+
+.work:hover .layer{
+    height: 100%;
+}
+
+.btn{
+    display: block;
+    padding: 14px 50px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    transition: 0.5s;
+}
+
+.btn:hover{
+    background: #ff004f;
+    color: white;
+}
+
+/*---------- contact ------------*/
+
+.contact-left{
+    flex-basis: 35%;
+}
+
+.contact-right{
+    flex-basis: 60%;
+}
+
+.contact-left p{
+    margin-top:30px ;
+}
+.contact-left p i {
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+
+
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+
+}
+
+.social-icons a:hover {
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+
+    .btn.btn2{
+        display: inline-block;
+        background: #ff004f;
+    
+}
+
+.contact-right form{
+    width: 100%;
+}
+
+form input,form textarea{
+    width: 100%;
+   border: 0;
+   outline: none;
+   background: #262626;
+   padding: 15px;
+   margin: 15px 0;
+   color: #fff;
+   font-size: 18px;
+   border-radius:6px ;
+}
+
+form btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+nav .fa-solid {
+    display: none;
+}
+
+
+/*---------- small screen ------------*/
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .header-content {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Align items centrally */
+        text-align: center; /* Center text */
+    }
+
+    .header-text {
+        max-width: 100%; /* Use full width for text */
+        margin-top: 30%; /* Reduced margin-top for better view */
+        font-size: 22px; /* Smaller font size for space management */
+    }
+
+    .header-text h1 {
+        font-size: 40px; /* Smaller main heading */
+    }
+
+    .header-image {
+        max-width: 100%; /* Smaller images */
+        margin-top: 40px; /* Reduced margin */
+    }
+
+    nav ul li {
+        margin: 10px 10px; /* Reduced margin for navigation items */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Smaller font size for navigation links */
+    }
+
+    .container {
+        padding: 10px 5%; /* Reduced side padding */
+    }
+
+    #services, #portfolio {
+        padding: 50px 20px; /* Less padding on small screens */
+    }
+
+    .services-list div, .work-list .work {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* More responsive grid */
+    }
+
+    .about-col-1, .about-col-2, .contact-left, .contact-right {
+        flex-basis: 100%; /* Full width for columns */
+    }
+
+    .sub-title {
+        font-size: 40px; /* Smaller subtitles */
+    }
+
+    .tab-links {
+        margin-right: 20px; /* Smaller margin between tab links */
+    }
+
+    .services-list div, .work-list .work {
+        padding: 20px; /* Less padding inside service and work blocks */
+    }
+
+    .btn {
+        padding: 12px 30px; /* Smaller button padding */
+        font-size: 16px; /* Smaller button font size */
+    }
+
+    .social-icons a {
+        font-size: 20px; /* Smaller icons in the footer */
+    }
+
+    form input,form textarea{
+        width: 100%;}
+
+        nav .fa-solid {
+            display: block;
+            font-size: 25px;
+        }
+
+        nav ul{
+            background: #ff004f;
+            position: fixed;
+            top: 0;
+            right: -200px;
+            width: 200px;
+            height: 100vh;
+            padding-top: 50px;
+            z-index: 2;
+            transition: right 0.5s;
+
+        }
+
+        nav ul li{
+            display: block;
+            margin: 25px;
+        }
+
+        nav ul .fa-solid{
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            cursor: pointer;
+        }
+}
+
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+}
